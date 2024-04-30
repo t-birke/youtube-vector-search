@@ -1,0 +1,57 @@
+<template>
+
+    <div class="slds-card slds-p-around_medium">
+
+
+        <!-- Search input field with two-way data binding to searchTerm property -->
+        <div class="slds-grid slds-p-around_medium slds-align-top">
+            <div class="slds-row slds-size_8-of-12">
+                <lightning-input
+
+                type="search"
+    
+                label="Search"
+    
+                value={searchTerm}
+                variant="label-hidden"
+                onchange={handleSearchChange}>
+
+                >
+    
+            </lightning-input>
+            </div>
+            <div class="slds-row">
+                <lightning-button variant="brand" label="search" title="Primary action" onclick={handleButtonClick} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+       
+        
+        <!-- Display Results -->
+        <br />
+        <ul class="slds-m-around_medium">
+            <template for:each={results} for:item="result">
+              <li key={result.video_id_c__c} class="slds-card slds-p-around_medium">
+                <div class="slds-grid">
+                    <div class="slds-row number-heading slds-p-around_medium">{result.rank}</div>
+                    <div class="slds-row">
+                        <iframe width="368" height="207" src={result.embedSource} title="YouTube video player" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="slds-row slds-p-around_medium">
+                        {result.scoreInPercent}
+                    </div>
+                    <div class="slds-text-body_small slds-row slds-p-around_medium">
+                        {result.Chunk__c}
+                    </div>
+                </div>
+                
+                
+                
+                </li>
+            </template>
+          </ul>
+        <!-- -->
+
+    </div>
+
+</template>

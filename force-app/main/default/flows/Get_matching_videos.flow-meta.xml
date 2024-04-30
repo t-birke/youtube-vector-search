@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Get_matching_videos</name>
+        <label>Get matching videos</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <actionName>GetVideoForPrompt</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>populate_prompt</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>c</name>
+            <value>
+                <elementReference>$Input.RelatedObject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Recipient</name>
+            <value>
+                <elementReference>$Input.Recipient</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Sender</name>
+            <value>
+                <elementReference>$Input.Sender</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>GetVideoForPrompt</nameSegment>
+        <outputParameters>
+            <assignToReference>PromptResult</assignToReference>
+            <name>Prompt</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>populate_prompt</name>
+        <elementSubtype>AddPromptInstructions</elementSubtype>
+        <label>populate prompt</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>$Output.Prompt</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>{!PromptResult}
+</stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <description>find videos with timestamps that match the case description</description>
+    <environments>Default</environments>
+    <interviewLabel>Get matching videos {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Get matching videos</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>PromptFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_matching_videos</targetReference>
+        </connector>
+        <triggerType>Capability</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>PromptResult</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

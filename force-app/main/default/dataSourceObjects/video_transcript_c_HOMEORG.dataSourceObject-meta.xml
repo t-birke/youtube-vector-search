@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataSourceObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataSource>Salesforce_00DWz000000WkFp</dataSource>
+    <externalRecordIdentifier>video_transcript__c</externalRecordIdentifier>
+    <masterLabel>video_transcript__c</masterLabel>
+</DataSourceObject>

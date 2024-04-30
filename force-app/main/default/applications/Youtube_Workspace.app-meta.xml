@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#FF0000</headerColor>
+        <logo>YouTube_social_white_circle_2017svg</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>true</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Youtube Workspace</label>
+    <navType>Standard</navType>
+    <tabs>channel__c</tabs>
+    <tabs>video_transcript__c</tabs>
+    <tabs>Video_Search</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Youtube_Workspace_UtilityBar</utilityBar>
+</CustomApplication>
