@@ -78,6 +78,28 @@
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <capabilityTypes>
+            <name>PromptTemplateType://einstein_gpt__salesEmail</name>
+            <capabilityName>PromptTemplateType://einstein_gpt__salesEmail</capabilityName>
+            <inputs>
+                <name>Sender</name>
+                <capabilityInputName>Sender</capabilityInputName>
+                <dataType>SOBJECT://User</dataType>
+                <isCollection>false</isCollection>
+            </inputs>
+            <inputs>
+                <name>Recipient</name>
+                <capabilityInputName>Recipient</capabilityInputName>
+                <dataType>SOBJECT://Contact</dataType>
+                <isCollection>false</isCollection>
+            </inputs>
+            <inputs>
+                <name>RelatedObject</name>
+                <capabilityInputName>RelatedObject</capabilityInputName>
+                <dataType>SOBJECT://Case</dataType>
+                <isCollection>false</isCollection>
+            </inputs>
+        </capabilityTypes>
         <connector>
             <targetReference>Get_matching_videos</targetReference>
         </connector>

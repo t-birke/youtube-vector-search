@@ -119,6 +119,16 @@
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
+        <capabilityTypes>
+            <name>PromptTemplateType://einstein_gpt__fieldCompletion</name>
+            <capabilityName>PromptTemplateType://einstein_gpt__fieldCompletion</capabilityName>
+            <inputs>
+                <name>RelatedEntity</name>
+                <capabilityInputName>RelatedEntity</capabilityInputName>
+                <dataType>SOBJECT://Case</dataType>
+                <isCollection>false</isCollection>
+            </inputs>
+        </capabilityTypes>
         <connector>
             <targetReference>get_contact</targetReference>
         </connector>
